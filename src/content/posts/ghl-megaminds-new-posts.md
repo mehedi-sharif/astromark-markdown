@@ -1,9 +1,25 @@
 ---
 title: GHL MegaMinds New Posts
-description: ""
+description: "GHL MegaMinds New Posts"
 date: ""
-read_time: ""
+read_time: "1"
 category: ""
-published: false
+published: true
 ---
+Lorem10 asdfasfasdfa
 
+Lorem10 asdfasfasdfa
+
+Lorem10 asdfasfasdfa
+
+Lorem10 asdfasfasdfa
+
+Lorem10 asdfasfasdfa
+
+Lorem10 asdfasfasdfa
+
+Lorem10 asdfasfasdfa
+
+Lorem10 asdfasfasdfa
+
+Lorem10 asdfasfasdfa
