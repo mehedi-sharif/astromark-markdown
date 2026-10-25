@@ -9,6 +9,8 @@ published: true
 
 ## Version control, but for sentences
 
+
+
 Writers have been inventing version control forever. We name files
 `draft-final.docx`, `draft-final-2.docx`, `draft-final-REALLY-final.docx`.
 We email copies to ourselves. We keep a folder of "old versions" we
