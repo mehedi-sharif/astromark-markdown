@@ -10,6 +10,8 @@ nav:
     href: "#testimonials"
   - label: FAQ
     href: "#faq"
+  - label: Blog
+    href: "/blog"
 cta_label: Write in markdown. Ship like an editor.
 cta_href: "#cta"
 footer:
@@ -29,7 +31,7 @@ footer:
         - label: About
           href: "#"
         - label: Blog
-          href: "#"
+          href: "/blog"
         - label: Careers
           href: "#"
         - label: Press kit

@@ -27,13 +27,11 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((item) => (
-            <a
+            <NavAnchor
               key={item.href}
-              href={item.href}
+              item={item}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-ink"
-            >
-              {item.label}
-            </a>
+            />
           ))}
         </nav>
 
@@ -60,17 +58,15 @@ export function SiteHeader() {
         <div className="border-t border-border/60 bg-paper md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4">
             {nav.map((item) => (
-              <a
+              <NavAnchor
                 key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
+                item={item}
+                onNavigate={() => setOpen(false)}
                 className={cn(
                   "rounded-lg px-3 py-2.5 text-base font-medium text-ink",
                   "transition-colors hover:bg-sand",
                 )}
-              >
-                {item.label}
-              </a>
+              />
             ))}
             <a
               href={cta_href}
@@ -83,5 +79,32 @@ export function SiteHeader() {
         </div>
       ) : null}
     </header>
+  );
+}
+
+/**
+ * Renders a nav item as a client-side <Link> for real routes (href starts
+ * with "/") and a plain <a> for in-page hash anchors (href starts with "#").
+ */
+function NavAnchor({
+  item,
+  className,
+  onNavigate,
+}: {
+  item: { label: string; href: string };
+  className?: string;
+  onNavigate?: () => void;
+}) {
+  if (item.href.startsWith("#")) {
+    return (
+      <a href={item.href} onClick={onNavigate} className={className}>
+        {item.label}
+      </a>
+    );
+  }
+  return (
+    <Link to={item.href as never} onClick={onNavigate} className={className}>
+      {item.label}
+    </Link>
   );
 }

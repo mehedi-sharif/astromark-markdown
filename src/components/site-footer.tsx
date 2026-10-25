@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 import { brand } from "@/content/content";
 
 export function SiteFooter() {
@@ -41,12 +43,21 @@ export function SiteFooter() {
               <ul className="mt-4 space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-muted-foreground transition-colors hover:text-terracotta"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith("#") ? (
+                      <a
+                        href={link.href}
+                        className="text-sm text-muted-foreground transition-colors hover:text-terracotta"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href as never}
+                        className="text-sm text-muted-foreground transition-colors hover:text-terracotta"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
