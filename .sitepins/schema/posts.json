@@ -1,5 +1,5 @@
 {
-  "file": "src/content/posts/git-for-writers.md",
+  "file": "src/content/posts/_template.md",
   "name": "posts",
   "fileType": "md",
   "fmType": "yaml",
@@ -27,7 +27,15 @@
       "value": "",
       "isIgnored": false,
       "defaultValue": "",
-      "alwaysUseCurrentDate": false
+      "alwaysUseCurrentDate": true
+    },
+    {
+      "name": "author",
+      "label": "Author",
+      "type": "string",
+      "value": "",
+      "isIgnored": false,
+      "defaultValue": "Mehedi Sharif"
     },
     {
       "name": "read_time",
@@ -35,7 +43,7 @@
       "type": "string",
       "value": "",
       "isIgnored": false,
-      "defaultValue": ""
+      "defaultValue": "5 min read"
     },
     {
       "name": "category",
@@ -43,7 +51,7 @@
       "type": "string",
       "value": "",
       "isIgnored": false,
-      "defaultValue": ""
+      "defaultValue": "Writing"
     },
     {
       "name": "published",
@@ -51,7 +59,7 @@
       "type": "boolean",
       "value": false,
       "isIgnored": false,
-      "defaultValue": false
+      "defaultValue": true
     }
   ]
 }
