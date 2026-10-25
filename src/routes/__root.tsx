@@ -77,19 +77,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AI Studio App" },
-      { name: "description", content: "AI Studio Generated Project" },
-      { name: "author", content: "AI Studio" },
-      { property: "og:title", content: "AI Studio App" },
-      { property: "og:description", content: "AI Studio Generated Project" },
+      { title: "Quill — Markdown-native writing, refined" },
+      {
+        name: "description",
+        content:
+          "A calm, fast writing surface built around plain text. Draft in markdown, publish anywhere — no proprietary formats, no lock-in.",
+      },
+      { name: "author", content: "Quill Labs" },
+      { property: "og:title", content: "Quill — Markdown-native writing, refined" },
+      {
+        property: "og:description",
+        content:
+          "A calm, fast writing surface built around plain text. Draft in markdown, publish anywhere.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap",
       },
+      { rel: "stylesheet", href: appCss },
     ],
   }),
   shellComponent: RootShell,
