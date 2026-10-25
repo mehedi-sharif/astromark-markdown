@@ -1,5 +1,5 @@
 ---
-brand: Quill
+brand: Mehedi Sharif
 tagline: Markdown, refined.
 nav:
   - label: Features
