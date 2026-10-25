@@ -105,10 +105,14 @@ function PostNotFound() {
   );
 }
 
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+function formatDate(iso?: string): string {
+  if (!iso) return "Recently";
+  const d = new Date(iso);
+  return Number.isNaN(d.getTime())
+    ? "Recently"
+    : d.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
 }

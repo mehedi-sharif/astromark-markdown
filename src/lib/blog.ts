@@ -5,8 +5,8 @@ import { parseMarkdown } from "@/lib/markdown";
 export interface BlogPostFrontmatter {
   title: string;
   description: string;
-  /** ISO date, e.g. 2026-10-20. Required. */
-  date: string;
+  /** ISO date, e.g. 2026-10-20. Optional — undated posts still list. */
+  date?: string;
   author: string;
   read_time: string;
   category: string;
@@ -67,9 +67,14 @@ const allPosts: BlogPost[] = Object.entries(postModules)
       html: parsed.html,
     };
   })
-  // Only list dated, published posts — undated drafts stay hidden.
-  .filter((p) => Boolean(p.frontmatter.date) && p.frontmatter.published !== false)
-  .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+  // List every published post — drafts (published: false) stay hidden.
+  // Undated posts sort to the end so dated essays stay chronological.
+  .filter((p) => p.frontmatter.published !== false)
+  .sort((a, b) => {
+    const ta = a.frontmatter.date ? new Date(a.frontmatter.date).getTime() : 0;
+    const tb = b.frontmatter.date ? new Date(b.frontmatter.date).getTime() : 0;
+    return tb - ta;
+  });
 
 export const posts: BlogPost[] = allPosts;
 
